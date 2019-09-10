@@ -11,15 +11,16 @@ source:
 
 build:
   skip: True  # [win]
-  number: 1
+  number: 2
 
 requirements:
   build:
     - {{ compiler('c') }}
     - {{ cdt('xorg-x11-proto-devel') }}  # [linux]
     - {{ cdt('libx11-devel') }}          # [linux]
-    - {{ cdt('libxcb') }}                # [linux]
-    - {{ cdt('libxau') }}                # [linux]
+    - libxcb                             # [linux]
+    - xorg-libxau                        # [linux]
+    - make                               # [linux]
   host:
     - tk
   run:
